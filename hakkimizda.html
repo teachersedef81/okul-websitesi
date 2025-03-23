@@ -51,7 +51,7 @@ var i = 0;
 
 function degistir() {
     i = (i + 1) % resimler.length;
-    document.getElementById("galeri").src = resimler[i];
+    document.getElementById("galeri").src = images[i];
 }
 
 setInterval(degistir, 3000); // 3 saniyede bir değiştir
