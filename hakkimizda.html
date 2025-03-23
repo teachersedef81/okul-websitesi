@@ -42,6 +42,20 @@
         <p>Düzce Hürriyet Ortaokulu, akademik başarılarıyla adından söz ettiren bir kurumdur. Özellikle LGS (Liselere Geçiş Sınavı) hazırlık sürecinde öğrencilerimizi en iyi şekilde destekliyoruz. Okulumuz, her yıl LGS'de yüksek başarı oranlarına ulaşarak öğrencilerimizin nitelikli liselere yerleşmelerini sağlamaktadır.</p>
         <p>Başarılarımızın arkasında, alanında uzman öğretmen kadromuz ve öğrencilerimizin ihtiyaçlarına özel hazırlanan eğitim programlarımız yer almaktadır. Ayrıca, düzenli deneme sınavları ve bireysel rehberlik hizmetleriyle öğrencilerimizin potansiyellerini en üst düzeye çıkarıyoruz.</p>
     </section>
+
+    <img id="galeri" src="resim1.jpg" width="500">
+<script>
+var resimler = ["resim1.jpg", "resim2.jpg", "resim3.jpg", "resim4.jpg", "resim5.jpg"];
+var i = 0;
+
+function degistir() {
+    i = (i + 1) % resimler.length;
+    document.getElementById("galeri").src = resimler[i];
+}
+
+setInterval(degistir, 3000); // 3 saniyede bir değiştir
+</script>
+
     <footer>
         <p>&copy; 2023 Okulumuz. Tüm hakları saklıdır.</p>
     </footer>
