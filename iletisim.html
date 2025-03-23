@@ -47,6 +47,25 @@
         </ul>
         <p>Okulumuzla ilgili daha detaylı bilgi almak veya randevu talebinde bulunmak için bizimle iletişime geçebilirsiniz.</p>
     </section>
+    <p>Şu anki saat: <span id="saat"></span></p>
+
+<script>
+function guncelleSaat() {
+    var now = new Date();
+    var saat = now.getHours();
+    var dakika = now.getMinutes();
+    var saniye = now.getSeconds();
+    
+    if (dakika < 10) dakika = "0" + dakika;
+    if (saniye < 10) saniye = "0" + saniye;
+
+    document.getElementById("saat").innerHTML = saat + ":" + dakika + ":" + saniye;
+}
+
+setInterval(guncelleSaat, 1000); // Her saniye günceller
+guncelleSaat();
+</script>
+
     <style>
         .harita iframe {
             width: 100%;
