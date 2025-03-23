@@ -43,22 +43,23 @@
         <p>Başarılarımızın arkasında, alanında uzman öğretmen kadromuz ve öğrencilerimizin ihtiyaçlarına özel hazırlanan eğitim programlarımız yer almaktadır. Ayrıca, düzenli deneme sınavları ve bireysel rehberlik hizmetleriyle öğrencilerimizin potansiyellerini en üst düzeye çıkarıyoruz.</p>
     </section>
 
-    <img id="galeri" src="resim1.jpg" width="500">
-<script>
-var 
-var images = ["images/resim1.jpg", "images/resim2.jpg", "images/resim3.jpg", "images/resim4.jpg", "images/resim5.jpg"];
-var i = 0;
+    <!-- Resim Galerisi -->
+    <img id="galeri" src="images/resim1.jpg" width="500">
 
-function degistir() {
-    i = (i + 1) % resimler.length;
-    document.getElementById("galeri").src = images[i];
-}
+    <script>
+    var resimler = ["images/resim1.jpg", "images/resim2.jpg", "images/resim3.jpg", "images/resim4.jpg", "images/resim5.jpg"];
+    var i = 0;
 
-setInterval(degistir, 3000); // 3 saniyede bir değiştir
-</script>
-</body>
+    function degistir() {
+        i = (i + 1) % resimler.length;
+        document.getElementById("galeri").src = resimler[i];
+    }
+
+    setInterval(degistir, 3000); // 3 saniyede bir değiştir
+    </script>
+
     <footer>
         <p>&copy; 2023 Okulumuz. Tüm hakları saklıdır.</p>
     </footer>
-
+</body>
 </html>
