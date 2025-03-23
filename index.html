@@ -21,6 +21,20 @@ function changeDuyuru() {
     document.getElementById("duyuru").innerHTML = "Bugünün duyurusu: " + duyurular[index];
 }
 </script>
+<button onclick="geceModu()">Gece Modu Aç/Kapat</button>
+
+<script>
+function geceModu() {
+    document.body.classList.toggle("dark-mode");
+}
+</script>
+
+<style>
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+</style>
 
   <title>Ana Sayfa</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -44,7 +58,7 @@ function showMessage() {
     body {
         background-image: url('images/background.png');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: auto;
         background-position: center;
     }
     header {
@@ -61,7 +75,7 @@ function showMessage() {
 </head>
 <body>
     <header>
-        <img src="images/okul1.jpg" alt="Okul Fotoğrafi" alt="Okul Fotoğrafi" width="500" height="300">
+        <img src="images/okul11.jpg" alt="Okul Fotoğrafi" alt="Okul Fotoğrafi" width="500" height="300">
         <h1>Hürriyet Ortaokulu Web Sitesine Hoş Geldiniz </h1>
         <h1>"Başarıyı Takip Et, Varış Yerin Hürriyet!"</h1>
         <nav>
@@ -79,6 +93,23 @@ function showMessage() {
         <p>Düzce Hürriyet Ortaokulu, öğrencilerine modern eğitim imkanları sunan bir kurumdur. Okulumuz, teknolojik altyapısı ve çağdaş eğitim anlayışıyla öğrencilerimizin hem akademik hem de sosyal gelişimlerini desteklemektedir. Akıllı tahtalar, bilgisayar laboratuvarları ve geniş kütüphane imkanlarıyla öğrencilerimize en iyi eğitim ortamını sunuyoruz.</p>
         <p>Okulumuzda ayrıca FCL (Future Classroom Lab), robotik sınıfı ve müzik odası gibi özel alanlar bulunmaktadır. Bu alanlar, öğrencilerimizin yaratıcılıklarını geliştirmelerine ve farklı beceriler kazanmalarına olanak tanır.</p>
     </section>
+    <p>Okulda en çok hangi etkinliği seviyorsunuz?</p>
+<button onclick="oyVer('Spor')">Spor</button>
+<button onclick="oyVer('Müzik')">Müzik</button>
+<button onclick="oyVer('Tiyatro')">Tiyatro</button>
+
+<p id="sonuc"></p>
+
+<script>
+var oylar = { Spor: 0, Müzik: 0, Tiyatro: 0 };
+
+function oyVer(etkinlik) {
+    oylar[etkinlik]++;
+    document.getElementById("sonuc").innerHTML = 
+        "Şu anki sonuçlar: Spor (" + oylar.Spor + "), Müzik (" + oylar.Müzik + "), Tiyatro (" + oylar.Tiyatro + ")";
+}
+</script>
+
     <style>
         /* Tablo stilleri */
         table {

@@ -6,12 +6,7 @@
     <title>Hakkımızda</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
-        body {
-            background-image: url('images/background.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+        body 
         header {
             background-color: rgba(255, 255, 255, 0.8); /* Başlık arka planı */
             padding: 20px;
@@ -23,6 +18,21 @@
             margin: 20px;
         }
     </style>
+    <button onclick="geceModu()">Gece Modu Aç/Kapat</button>
+
+    <script>
+    function geceModu() {
+        document.body.classList.toggle("dark-mode");
+    }
+    </script>
+    
+    <style>
+    .dark-mode {
+        background-color: black;
+        color: white;
+    }
+    </style>
+    
 </head>
 <body>
     <header>
@@ -44,8 +54,9 @@
     </section>
 
     <!-- Resim Galerisi -->
+    <h2>Foto Galeri</h2>
     <img id="galeri" src="images/resim1.jpg" width="500">
-
+    
     <script>
     var resimler = ["images/resim1.jpg", "images/resim2.jpg", "images/resim3.jpg", "images/resim4.jpg", "images/resim5.jpg"];
     var i = 0;
