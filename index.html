@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
+  <p id="duyuru">Bugünün duyurusu: Okul gezisi kayıtları başladı!</p>
+<button onclick="changeDuyuru()">Yeni Duyuru</button>
+
+<script>
+var duyurular = [
+    "Okul gezisi kayıtları başladı!",
+    "Sınav programı güncellendi!",
+    "Tiyatro kulübü başvuruları başladı!"
+];
+
+var index = 0;
+
+function changeDuyuru() {
+    index = (index + 1) % duyurular.length;
+    document.getElementById("duyuru").innerHTML = "Bugünün duyurusu: " + duyurular[index];
+}
+</script>
+
   <title>Ana Sayfa</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <h2 id="welcome">Hoş geldiniz!</h2>
+<input type="text" id="userName" placeholder="Adınızı girin">
+<button onclick="showMessage()">Gönder</button>
+
+<script>
+function showMessage() {
+    var name = document.getElementById("userName").value;
+    document.getElementById("welcome").innerHTML = "Hoş geldin, " + name + "!";
+}
+</script>
+
   <style>
     h1 {
         color: green; /* Başlık rengini yeşil yapar */
