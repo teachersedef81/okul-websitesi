@@ -3,214 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
-  <p id="duyuru">Bugünün duyurusu: Okul gezisi kayıtları başladı!</p>
-<button onclick="changeDuyuru()">Yeni Duyuru</button>
-
-<script>
-var duyurular = [
-    "Okul gezisi kayıtları başladı!",
-    "Sınav programı güncellendi!",
-    "Tiyatro kulübü başvuruları başladı!"
-];
-
-var index = 0;
-
-function changeDuyuru() {
-    index = (index + 1) % duyurular.length;
-    document.getElementById("duyuru").innerHTML = "Bugünün duyurusu: " + duyurular[index];
-}
-</script>
-
-  <title>Ana Sayfa</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <h2 id="welcome">Hoş geldiniz!</h2>
-<input type="text" id="userName" placeholder="Adınızı girin">
-<button onclick="showMessage()">Gönder</button>
-
-<script>
-function showMessage() {
-    var name = document.getElementById("userName").value;
-    document.getElementById("welcome").innerHTML = "Hoş geldin, " + name + "!";
-}
-</script>
-
-  <style>
-    h1 {
-        color: green; /* Başlık rengini yeşil yapar */
-    }
-</style>
-<style>
-    body {
-        background-image: url('images/background.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-    header {
-        background-color: rgba(255, 255, 255, 0.8); /* Başlık arka planı */
-        padding: 20px;
-        text-align: left;
-    }
-    section {
-        background-color: rgba(255, 255, 255, 0.8); /* İçerik arka planı */
-        padding: 20px;
-        margin: 20px;
-    }
-</style>
-</head>
-<body>
-    <header>
-        <img src="images/okul1.jpg" alt="Okul Fotoğrafi" alt="Okul Fotoğrafi" width="500" height="300">
-        <h1>Hürriyet Ortaokulu Web Sitesine Hoş Geldiniz </h1>
-        <h1>"Başarıyı Takip Et, Varış Yerin Hürriyet!"</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="egitim.html">Eğitim</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section>
-        <h2>Okulumuzun Modern İmkanları</h2>
-        <p>Düzce Hürriyet Ortaokulu, öğrencilerine modern eğitim imkanları sunan bir kurumdur. Okulumuz, teknolojik altyapısı ve çağdaş eğitim anlayışıyla öğrencilerimizin hem akademik hem de sosyal gelişimlerini desteklemektedir. Akıllı tahtalar, bilgisayar laboratuvarları ve geniş kütüphane imkanlarıyla öğrencilerimize en iyi eğitim ortamını sunuyoruz.</p>
-        <p>Okulumuzda ayrıca FCL (Future Classroom Lab), robotik sınıfı ve müzik odası gibi özel alanlar bulunmaktadır. Bu alanlar, öğrencilerimizin yaratıcılıklarını geliştirmelerine ve farklı beceriler kazanmalarına olanak tanır.</p>
-    </section>
+    <title>Okul Anasayfa</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Tablo stilleri */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            background: #0073e6;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Sola yaslama */
+        }
+        .table-container {
+            width: 60%; /* Tabloyu küçültme */
+            margin: 20px 0;
+        }
         table {
-            width: 50%; /* Tablo genişliği sayfanın %50'si kadar */
+            width: 100%;
             border-collapse: collapse;
-            margin: 20px auto; /* Tabloyu sayfanın ortasına alır */
+            background: white;
         }
         th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
         }
         th {
-            background-color: cyan; /* Sütun başlıkları cyan renkte */
+            background-color: #0073e6;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #004080;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <section>
-        <h2>Okuldan Randevu Al</h2>
-        <table>
-            <tr>
-                <th>Randevu Türü</th>
-                <th>Tarih</th>
-                <th>Saat</th>
-            </tr>
-            <tr>
-                <td>Veli Toplantısı</td>
-                <td>15.04.2025</td>
-                <td>10:00</td>
-            </tr>
-            <tr>
-                <td>Rehberlik Görüşmesi</td>
-                <td>20.05.2025</td>
-                <td>14:00</td>
-            </tr>
-        </table>
-
-        <h2>T.C. Millî Eğitim Bakanlığı</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>Bilgi</th>
-            </tr>
-            <tr>
-                <td>Bakanlık Adresi</td>
-                <td>Ankara</td>
-            </tr>
-            <tr>
-                <td>İletişim</td>
-                <td>0312 123 45 67</td>
-            </tr>
-        </table>
-
-        <h2>e-Okul Yönetim Bilgi Sistemleri Giriş Ekranı</h2>
-        <table>
-            <tr>
-                <th>Kullanıcı Türü</th>
-                <th>Giriş Linki</th>
-            </tr>
-            <tr>
-                <td>Öğrenci</td>
-                <td><a href="https://e-okul.meb.gov.tr">Öğrenci Girişi</a></td>
-            </tr>
-            <tr>
-                <td>Veli</td>
-                <td><a href="https://e-okul.meb.gov.tr">Veli Girişi</a></td>
-            </tr>
-        </table>
-
-        <h2>Düzce İl Milli Eğitim Müdürlüğü Atatürk Köşesi</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>İçerik</th>
-            </tr>
-            <tr>
-                <td>Atatürk'ün Sözleri</td>
-                <td>"Eğitimdir ki bir milleti ya özgür, bağımsız, şanlı, yüksek bir topluluk halinde yaşatır ya da esaret ve sefalete terk eder."</td>
-            </tr>
-        </table>
-
-        <h2>EBA Eğitim Bilişim Ağı</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>Link</th>
-            </tr>
-            <tr>
-                <td>EBA Giriş</td>
-                <td><a href="https://eba.gov.tr">EBA Girişi</a></td>
-            </tr>
-            <tr>
-                <td>EBA Dersler</td>
-                <td><a href="https://eba.gov.tr">Derslere Git</a></td>
-            </tr>
-        </table>
-
-        <h2>Proje Sayfamız</h2>
-        <table>
-            <tr>
-                <th>Proje Adı</th>
-                <th>Detay</th>
-            </tr>
-            <tr>
-                <td>Web Tasarım Projesi</td>
-                <td>Öğrencilerimiz tarafından hazırlanan web tasarım projeleri.</td>
-            </tr>
-            <tr>
-                <td>SHORE</td>
-                <td><a href="https://duzcehurriyet.my.canva.site/maviufuklar-websitesi">Shore proje çalışmalarımız</a></td>
-            </tr>
-        </table>
-
-        <h2>Cumhurbaşkanlığı İletişim Merkezi</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>İletişim</th>
-            </tr>
-            <tr>
-                <td>Alo 183</td>
-                <td><a href="https://www.alo183.gov.tr">Alo 183</a></td>
-            </tr>
-            <tr>
-                <td>CİMER</td>
-                <td><a href="https://www.cimer.gov.tr">CİMER Girişi</a></td>
-            </tr>
-        </table>
-    </section>
+    <header>
+        Düzce Hürriyet Ortaokulu
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="egitim.html">Eğitim</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h2>Okul Bilgileri</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Özellik</th>
+                    <th>Bilgi</th>
+                </tr>
+                <tr>
+                    <td>Kuruluş Yılı</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>Öğrenci Sayısı</td>
+                    <td>500+</td>
+                </tr>
+                <tr>
+                    <td>Öğretmen Sayısı</td>
+                    <td>40+</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
     <footer>
-        <p>&copy; 2023 Okulumuz. Tüm hakları saklıdır.</p>
+        &copy; 2024 Düzce Hürriyet Ortaokulu. Tüm hakları saklıdır.
     </footer>
 </body>
-</html> 
+</html>
