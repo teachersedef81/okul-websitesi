@@ -3,83 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Okul Web Sitesi</title>
     <style>
-  <p id="duyuru">Bugünün duyurusu: Okul gezisi kayıtları başladı!</p>
-<button onclick="changeDuyuru()">Yeni Duyuru</button>
-
-<script>
-var duyurular = [
-    "Okul gezisi kayıtları başladı!",
-    "Sınav programı güncellendi!",
-    "Tiyatro kulübü başvuruları başladı!"
-];
-
-var index = 0;
-
-function changeDuyuru() {
-    index = (index + 1) % duyurular.length;
-    document.getElementById("duyuru").innerHTML = "Bugünün duyurusu: " + duyurular[index];
-}
-</script>
-<button onclick="geceModu()">Gece Modu Aç/Kapat</button>
-
-<script>
-function geceModu() {
-    document.body.classList.toggle("dark-mode");
-}
-</script>
-
-<style>
-.dark-mode {
-    background-color: black;
-    color: white;
-}
-</style>
-
-  <title>Ana Sayfa</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <h2 id="welcome">Hoş geldiniz!</h2>
-<input type="text" id="userName" placeholder="Adınızı girin">
-<button onclick="showMessage()">Gönder</button>
-
-<script>
-function showMessage() {
-    var name = document.getElementById("userName").value;
-    document.getElementById("welcome").innerHTML = "Hoş geldin, " + name + "!";
-}
-</script>
-
-  <style>
-    h1 {
-        color: green; /* Başlık rengini yeşil yapar */
-    }
-</style>
-<style>
-    body {
-        background-image: url('images/background.png');
-        background-repeat: no-repeat;
-        background-size: auto;
-        background-position: center;
-    }
-    header {
-        background-color: rgba(255, 255, 255, 0.8); /* Başlık arka planı */
-        padding: 20px;
-        text-align: left;
-    }
-    section {
-        background-color: rgba(255, 255, 255, 0.8); /* İçerik arka planı */
-        padding: 20px;
-        margin: 20px;
-    }
-</style>
+        body {
+            background-image: url('images/background.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: left;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        h1, h2 {
+            color: #004d4d;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        .section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <img src="images/okul11.jpg" alt="Okul Fotoğrafi" alt="Okul Fotoğrafi" width="500" height="300">
-        <h1>Hürriyet Ortaokulu Web Sitesine Hoş Geldiniz </h1>
-        <h1>"Başarıyı Takip Et, Varış Yerin Hürriyet!"</h1>
+        <img src="images/okul11.jpg" alt="Okul Fotoğrafı" width="500" height="300">
+        <h1>Hürriyet Ortaokulu Web Sitesine Hoş Geldiniz</h1>
+        <h2>"Başarıyı Takip Et, Varış Yerin Hürriyet!"</h2>
         <nav>
             <ul>
                 <li><a href="index.html">Ana Sayfa</a></li>
@@ -90,161 +82,26 @@ function showMessage() {
         </nav>
     </header>
     
-    <section>
-        <h2>Okulumuzun Modern İmkanları</h2>
-        <p>Düzce Hürriyet Ortaokulu, öğrencilerine modern eğitim imkanları sunan bir kurumdur. Okulumuz, teknolojik altyapısı ve çağdaş eğitim anlayışıyla öğrencilerimizin hem akademik hem de sosyal gelişimlerini desteklemektedir. Akıllı tahtalar, bilgisayar laboratuvarları ve geniş kütüphane imkanlarıyla öğrencilerimize en iyi eğitim ortamını sunuyoruz.</p>
-        <p>Okulumuzda ayrıca FCL (Future Classroom Lab), robotik sınıfı ve müzik odası gibi özel alanlar bulunmaktadır. Bu alanlar, öğrencilerimizin yaratıcılıklarını geliştirmelerine ve farklı beceriler kazanmalarına olanak tanır.</p>
+    <section class="section">
+        <h2>Bugünün Duyurusu</h2>
+        <p id="duyuru">Bugünün duyurusu: Okul gezisi kayıtları başladı!</p>
+        <button onclick="changeDuyuru()">Yeni Duyuru</button>
+        <script>
+            var duyurular = [
+                "Okul gezisi kayıtları başladı!",
+                "Sınav programı güncellendi!",
+                "Tiyatro kulübü başvuruları başladı!"
+            ];
+            var index = 0;
+            function changeDuyuru() {
+                index = (index + 1) % duyurular.length;
+                document.getElementById("duyuru").innerHTML = "Bugünün duyurusu: " + duyurular[index];
+            }
+        </script>
     </section>
-
-    <p>Okulda en çok hangi etkinliği seviyorsunuz?</p>
-<button onclick="oyVer('Spor')">Spor</button>
-<button onclick="oyVer('Müzik')">Müzik</button>
-<button onclick="oyVer('Tiyatro')">Tiyatro</button>
-
-<p id="sonuc"></p>
-
-<script>
-var oylar = { Spor: 0, Müzik: 0, Tiyatro: 0 };
-
-function oyVer(etkinlik) {
-    oylar[etkinlik]++;
-    document.getElementById("sonuc").innerHTML = 
-        "Şu anki sonuçlar: Spor (" + oylar.Spor + "), Müzik (" + oylar.Müzik + "), Tiyatro (" + oylar.Tiyatro + ")";
-}
-</script>
-
-    <style>
-        /* Tablo stilleri */
-        table {
-            width: 20%; /* Tablo genişliği sayfanın %'si kadar */
-            border-collapse: collapse;
-            margin: 20px 0; /* Tabloyu sayfanın ortasına alır */
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: cyan; /* Sütun başlıkları cyan renkte */
-        }
-    </style>
-</head>
-<body>
-    <section>
-        <h2>Okuldan Randevu Al</h2>
-        <table>
-            <tr>
-                <th>Randevu Türü</th>
-                <th>Tarih</th>
-                <th>Saat</th>
-            </tr>
-            <tr>
-                <td>Veli Toplantısı</td>
-                <td>15.04.2025</td>
-                <td>10:00</td>
-            </tr>
-            <tr>
-                <td>Rehberlik Görüşmesi</td>
-                <td>20.05.2025</td>
-                <td>14:00</td>
-            </tr>
-        </table>
-
-        <h2>T.C. Millî Eğitim Bakanlığı</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>Bilgi</th>
-            </tr>
-            <tr>
-                <td>Bakanlık Adresi</td>
-                <td>Ankara</td>
-            </tr>
-            <tr>
-                <td>İletişim</td>
-                <td>0312 123 45 67</td>
-            </tr>
-        </table>
-
-        <h2>e-Okul Yönetim Bilgi Sistemleri Giriş Ekranı</h2>
-        <table>
-            <tr>
-                <th>Kullanıcı Türü</th>
-                <th>Giriş Linki</th>
-            </tr>
-            <tr>
-                <td>Öğrenci</td>
-                <td><a href="https://e-okul.meb.gov.tr">Öğrenci Girişi</a></td>
-            </tr>
-            <tr>
-                <td>Veli</td>
-                <td><a href="https://e-okul.meb.gov.tr">Veli Girişi</a></td>
-            </tr>
-        </table>
-
-        <h2>Düzce İl Milli Eğitim Müdürlüğü Atatürk Köşesi</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>İçerik</th>
-            </tr>
-            <tr>
-                <td>Atatürk'ün Sözleri</td>
-                <td>"Eğitimdir ki bir milleti ya özgür, bağımsız, şanlı, yüksek bir topluluk halinde yaşatır ya da esaret ve sefalete terk eder."</td>
-            </tr>
-        </table>
-
-        <h2>EBA Eğitim Bilişim Ağı</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>Link</th>
-            </tr>
-            <tr>
-                <td>EBA Giriş</td>
-                <td><a href="https://eba.gov.tr">EBA Girişi</a></td>
-            </tr>
-            <tr>
-                <td>EBA Dersler</td>
-                <td><a href="https://eba.gov.tr">Derslere Git</a></td>
-            </tr>
-        </table>
-
-        <h2>Proje Sayfamız</h2>
-        <table>
-            <tr>
-                <th>Proje Adı</th>
-                <th>Detay</th>
-            </tr>
-            <tr>
-                <td>Web Tasarım Projesi</td>
-                <td>Öğrencilerimiz tarafından hazırlanan web tasarım projeleri.</td>
-            </tr>
-            <tr>
-                <td>SHORE</td>
-                <td><a href="https://duzcehurriyet.my.canva.site/maviufuklar-websitesi">Shore proje çalışmalarımız</a></td>
-            </tr>
-        </table>
-
-        <h2>Cumhurbaşkanlığı İletişim Merkezi</h2>
-        <table>
-            <tr>
-                <th>Başlık</th>
-                <th>İletişim</th>
-            </tr>
-            <tr>
-                <td>Alo 183</td>
-                <td><a href="https://www.alo183.gov.tr">Alo 183</a></td>
-            </tr>
-            <tr>
-                <td>CİMER</td>
-                <td><a href="https://www.cimer.gov.tr">CİMER Girişi</a></td>
-            </tr>
-        </table>
-    </section>
+    
     <footer>
         <p>&copy; 2023 Okulumuz. Tüm hakları saklıdır.</p>
     </footer>
 </body>
-</html> 
+</html>
