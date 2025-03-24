@@ -6,7 +6,12 @@
     <title>Hakkımızda</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
-        body 
+        body {
+            background-image: url('images/background.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
         header {
             background-color: rgba(255, 255, 255, 0.8); /* Başlık arka planı */
             padding: 20px;
@@ -18,25 +23,11 @@
             margin: 20px;
         }
     </style>
-    <button onclick="geceModu()">Gece Modu Aç/Kapat</button>
-
-    <script>
-    function geceModu() {
-        document.body.classList.toggle("dark-mode");
-    }
-    </script>
-    
-    <style>
-    .dark-mode {
-        background-color: black;
-        color: white;
-    }
-    </style>
-    
 </head>
 <body>
     <header>
         <h1>Hakkımızda</h1>
+        <img src="images/okul2.jpg" alt="Okul 2 Fotoğrafı" width="200" height="200">
         <nav>
             <ul>
                 <li><a href="index.html">Ana Sayfa</a></li>
@@ -53,9 +44,8 @@
     </section>
 
     <!-- Resim Galerisi -->
-    <h2>Foto Galeri</h2>
     <img id="galeri" src="images/resim1.jpg" width="500">
-    
+
     <script>
     var resimler = ["images/resim1.jpg", "images/resim2.jpg", "images/resim3.jpg", "images/resim4.jpg", "images/resim5.jpg"];
     var i = 0;

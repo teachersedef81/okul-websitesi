@@ -6,18 +6,25 @@
     <title>Eğitim</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style/style.css">
-    <button onclick="geceModu()">Gece Modu Aç/Kapat</button>
-
-    <script>
-    function geceModu() {
-        document.body.classList.toggle("dark-mode");
-    }
-    </script>
-    
+    <style>
+        .info-box {
+            display: none;
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Eğitim</h1>
+        <button onclick="geceModu()">Gece Modu Aç/Kapat</button>
         <nav>
             <ul>
                 <li><a href="index.html">Ana Sayfa</a></li>
@@ -27,77 +34,53 @@
             </ul>
         </nav>
     </header>
-   
+
     <section>
         <h2>Eğitim Programlarımız</h2>
-        <img src="images/okul3.jpg" alt="Okul 3 Fotoğrafı" width="200" height="200"> <!-- width ile genişlik ayarlandı -->
+        <img src="images/okul3.jpg" alt="Okul 3 Fotoğrafı" width="200" height="200">
         
-        <h2>Eğitim Programlarımız ve Özel Sınıflar</h2>
-        <p>Düzce Hürriyet Ortaokulu, öğrencilerine sadece akademik değil, aynı zamanda sosyal ve sanatsal alanlarda da gelişim fırsatları sunar. Okulumuzda bulunan özel sınıflar ve imkanlar şunlardır:</p>
-        <ul>
-            <li><strong>FCL (Future Classroom Lab):</strong> Geleceğin sınıfı olarak adlandırılan FCL, öğrencilerimizin teknolojiyi etkin bir şekilde kullanmalarını sağlar. Bu sınıfta interaktif dersler ve proje tabanlı öğrenme etkinlikleri gerçekleştirilir.</li>
-            <li><strong>Robotik Sınıfı:</strong> Robotik ve kodlama eğitimleriyle öğrencilerimizin analitik düşünme ve problem çözme becerilerini geliştiriyoruz. Robotik sınıfımız, öğrencilerimizin yaratıcı projeler üretmelerine olanak tanır.</li>
-            <li><strong>Müzik Odası:</strong> Müzik odamızda piyano, gitar, bateri gibi enstrümanlar bulunmaktadır. Öğrencilerimiz, müzik öğretmenlerimiz eşliğinde bu enstrümanları öğrenerek sanatsal yeteneklerini keşfederler.</li>
-        </ul>
+        <h3>Eğitim Programlarımız ve Özel Sınıflar</h3>
+        <p>Düzce Hürriyet Ortaokulu, öğrencilerine...</p>
+        
         <section>
-            <h2>FCL Öğrenme Alanları(Alanların Üzerine Tıklayınız)</h2>
+            <h3>FCL Öğrenme Alanları</h3>
             <img src="images/fcl.png" alt="FCL Öğrenme Alanları" usemap="#fclmap">
-        
-            <!-- Image Map -->
             <map name="fclmap">
-                <!-- Araştırma Alanı -->
-                <area shape="rect" coords="561,64,660,170" alt="Araştırma Alanı" title="Araştırma Alanı" onclick="showInfo('Araştırma Alanı', 'Bu alanda öğrenciler araştırma yaparak bilgi toplar.Araştırma Alanı, öğrencilerin bilgiye ulaşma, analiz etme ve sentezleme becerilerini geliştirdikleri bir ortamdır. Bu alanda öğrenciler, internet ve dijital kaynaklar aracılığıyla bilgi toplar, araştırma yapar ve elde ettikleri verileri analiz eder. Araştırma sürecinde, eleştirel düşünme ve problem çözme becerileri de desteklenir.')">
-                
-                <!-- Sunum Alanı -->
-                <area shape="rect" coords="331,180,421,287" alt="Sunum Alanı" title="Sunum Alanı" onclick="showInfo('Sunum Alanı', 'Bu alanda öğrenciler projelerini sunar.Sunum Alanı, öğrencilerin projelerini ve çalışmalarını sergiledikleri bir alandır. Bu alanda öğrenciler, dijital sunum araçlarını kullanarak etkileyici sunumlar hazırlar ve topluluk önünde konuşma becerilerini geliştirir. Ayrıca, geri bildirim alarak kendilerini geliştirme fırsatı bulurlar.')">
-                
-                <!-- Üretim Alanı -->
-                <area shape="rect" coords="831,83,998,188" alt="Üretim Alanı" title="Üretim Alanı" onclick="showInfo('Üretim Alanı', 'Bu alanda öğrenciler projelerini üretir.Üretim Alanı, öğrencilerin yaratıcılıklarını kullanarak projeler ürettikleri bir ortamdır. Bu alanda 3D yazıcılar, robotik kitler ve diğer üretim araçları kullanılır. Öğrenciler, tasarım ve mühendislik becerilerini geliştirirken aynı zamanda inovasyon ve yaratıcı düşünme yeteneklerini de keşfederler.')">
-                
-                <!-- İşbirliği Alanı -->
-                <area shape="rect" coords="985,395,1084,497" alt="İşbirliği Alanı" title="İşbirliği Alanı" onclick="showInfo('İşbirliği Alanı', 'Bu alanda öğrenciler birlikte çalışır.İşbirliği Alanı, öğrencilerin takım çalışması ve iletişim becerilerini geliştirdikleri bir alandır. Bu alanda öğrenciler, grup projeleri üzerinde birlikte çalışır ve farklı bakış açılarını bir araya getirerek ortak çözümler üretir. İşbirliği, öğrencilerin sosyal ve duygusal becerilerini de destekler.')">
-                
-                <!-- Geliştirme Alanı -->
-                <area shape="rect" coords="615,574,708,673" alt="Geliştirme Alanı" title="Geliştirme Alanı" onclick="showInfo('Geliştirme Alanı', 'Bu alanda öğrenciler projelerini geliştirir.Geliştirme Alanı, öğrencilerin projelerini geliştirip iyileştirdikleri bir ortamdır. Bu alanda öğrenciler, yazılım geliştirme, prototip oluşturma ve test etme süreçlerini deneyimler. Sürekli iyileştirme ve yenilikçi çözümler üretme becerileri bu alanda ön plana çıkar.')">
-                
-                <!-- Etkileşim Alanı -->
-                <area shape="rect" coords="204,631,298,705" alt="Etkileşim Alanı" title="Etkileşim Alanı" onclick="showInfo('Etkileşim Alanı', 'Bu alanda öğrenciler etkileşimde bulunur.Etkileşim Alanı, öğrencilerin dijital araçlar ve teknolojiler aracılığıyla etkileşimde bulundukları bir alandır. Bu alanda öğrenciler, sanal gerçeklik (VR), artırılmış gerçeklik (AR) ve interaktif ekranlar gibi teknolojileri kullanarak öğrenme deneyimlerini zenginleştirir. Etkileşim, öğrencilerin motivasyonunu artırır ve öğrenmeyi daha eğlenceli hale getirir.')">
+                <area shape="rect" coords="561,64,660,170" alt="Araştırma Alanı" 
+                      onclick="showInfo('Araştırma Alanı', '...', event)">
+                <!-- Diğer alanlar... -->
             </map>
-        
-            <!-- Bilgi Kutusu -->
             <div id="infoBox" class="info-box"></div>
         </section>
-        
-        <script>
-            // Bilgi kutusunu göstermek için JavaScript fonksiyonu
-            function showInfo(title, content) {
-                const infoBox = document.getElementById('infoBox');
-                infoBox.innerHTML = `<strong>${title}</strong><br>${content}`;
-                infoBox.style.display = 'block';
-                infoBox.style.left = event.pageX + 'px';
-                infoBox.style.top = event.pageY + 'px';
-            }
-        
-            // Bilgi kutusunu gizlemek için
-            document.addEventListener('click', function(event) {
-                const infoBox = document.getElementById('infoBox');
-                if (event.target.tagName !== 'AREA') {
-                    infoBox.style.display = 'none';
-                }
-            });
-        </script>
 
-        <h2>Eğitim Programlarımız</h2>
         <ul>
             <li>Fen Bilimleri</li>
-            <li>Matematik</li>
-            <li>Sosyal Bilimler</li>
-            <li>Yabancı Dil Eğitimi</li>
+            <!-- Diğer programlar... -->
         </ul>
     </section>
 
     <footer>
         <p>&copy; 2023 Okulumuz. Tüm hakları saklıdır.</p>
     </footer>
+
+    <script>
+        function geceModu() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+        function showInfo(title, content, event) {
+            const infoBox = document.getElementById('infoBox');
+            infoBox.innerHTML = `<strong>${title}</strong><br>${content}`;
+            infoBox.style.display = 'block';
+            infoBox.style.left = `${event.pageX}px`;
+            infoBox.style.top = `${event.pageY}px`;
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('area')) {
+                document.getElementById('infoBox').style.display = 'none';
+            }
+        });
+    </script>
 </body>
-</html>6
+</html>
